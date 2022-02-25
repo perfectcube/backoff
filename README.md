@@ -46,6 +46,8 @@ Method parameters are `$callback`, `$maxAttempts`, `$strategy`, `$waitCap`, `$us
 The Backoff class constructor parameters are `$maxAttempts`, `$strategy`, `$waitCap`, `$useJitter`.
 
 ```php
+use \STS\Backoff\Backoff;
+
 $backoff = new Backoff(10, 'exponential', 10000, true);
 $result = $backoff->run(function() {
     return doSomeWorkThatMightFail();
